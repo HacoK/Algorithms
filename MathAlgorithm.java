@@ -1,5 +1,5 @@
 public class MathAlgorithm{
-
+    //计算平方根（牛顿迭代法）
     public static double sqrt(double c){
         if(c<0)
             return Double.NaN;
