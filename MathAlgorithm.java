@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 import java.util.Arrays;
 
 import javax.lang.model.util.ElementScanner6;
 
+=======
+>>>>>>> 41008339c33f499f638369f737739164c8e89d82
 public class MathAlgorithm{
     //计算平方根（牛顿迭代法）
     public static double sqrt(double c){
