@@ -1,5 +1,4 @@
-import java.util.Arrays
-import javax.lang.model.util.ElementScanner6
+import java.util.Arrays;
 
 public class MathAlgorithm{
     //计算平方根（牛顿迭代法）
