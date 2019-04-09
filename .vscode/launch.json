@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MathAlgorithm",
+            "request": "launch",
+            "mainClass": "MathAlgorithm",
+            "projectName": "Algorithms_8681b93d"
+        }
+    ]
+}
