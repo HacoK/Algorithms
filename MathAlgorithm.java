@@ -13,34 +13,6 @@ public class MathAlgorithm{
             t=(c/t+t)/2.0;
         return t;
     }
-    
-    //二分查找（迭代实现）
-    public static int binarySearch(int[] a, int key){
-        int lo=0;
-        int hi=a.length-1;
-        while(lo<=hi){
-            int mid=lo+(hi-lo)/2;
-            if(key<a[mid])
-                hi=mid-1;
-            else if(key>a[mid])
-                lo=mid+1;
-            else
-                return mid;
-        }
-        return -1;
-    }
-
-    //二分查找（递归实现）
-    public static int recursiveBS(int key,int[] a,int lo,int hi){
-        if(lo>hi) return -1;
-        int mid=lo+(hi-lo)/2;
-        if(key<a[mid])
-            return recursiveBS(key, a, lo, mid-1);
-        else if(key>a[mid])
-            return recursiveBS(key, a, mid+1, hi);
-        else
-            return mid;
-    }
 
     public static void RandomSeq (String[] args) {
 
@@ -72,35 +44,8 @@ public class MathAlgorithm{
         }
     }
 
-    public static void Average(String[] args) { 
-        int count = 0;       // number input values
-        double sum = 0.0;    // sum of input values
-
-        // read data and compute statistics
-        while (!StdIn.isEmpty()) {
-            double value = StdIn.readDouble();
-            sum += value;
-            count++;
-        }
-
-        // compute the average
-        double average = sum / count;
-
-        // print results
-        StdOut.println("Average is " + average);
-    }
-
+    
     public static void main(String[] args){
-        //白名单过滤
-        /*
-        int[] whitelist=new In(args[0]).readAllInts();
-        Arrays.sort(whitelist);
-        while(!StdIn.isEmpty()){
-            int key=StdIn.readInt();
-            if(binarySearch(whitelist, key)<0)
-                StdOut.println(key);
-        }
-        */
 
         //模拟T次掷硬币
         /*
@@ -117,6 +62,45 @@ public class MathAlgorithm{
         StdOut.println("delta: "+Math.abs(d));
         */
 
-        
+        //模拟T次掷骰子
+        /*
+        int T=Integer.parseInt(args[0]);
+        int SIDES=6;
+        Counter[] rolls=new Counter[SIDES+1];
+        for(int i=1;i<=SIDES;i++)
+            rolls[i]=new Counter(i+"'s");
+        for(int t=0;t<T;t++){
+            int result=StdRandom.uniform(1,SIDES+1);
+            rolls[result].increment();
+        }
+        for(int i=1;i<=SIDES;i++)
+            StdOut.println(rolls[i]);
+        */
+
+        //估算长方形面积(浮点数表示0.1存在精度丢失问题)
+        /*
+        double xlo=Double.parseDouble(args[0]);
+        double xhi=Double.parseDouble(args[1]);
+        double ylo=Double.parseDouble(args[2]);
+        double yhi=Double.parseDouble(args[3]);
+        int T=Integer.parseInt(args[4]);
+
+        Interval1D xinterval=new Interval1D(xlo,xhi);
+        Interval1D yinterval=new Interval1D(ylo,yhi);
+        Interval2D box=new Interval2D(xinterval,yinterval);
+        box.draw();
+
+        Counter c=new Counter("hits");
+        for(int t=0;t<T;t++){
+            double x=Math.random();
+            double y=Math.random();
+            Point2D p=new Point2D(x,y);
+            if(box.contains(p)) c.increment();
+            else                p.draw();
+        }
+        StdOut.println(c);
+        StdOut.println(box.area());
+        */
+
     }
 }
