@@ -101,6 +101,6 @@ public class MathAlgorithm{
         StdOut.println(c);
         StdOut.println(box.area());
         */
-
+        
     }
 }
